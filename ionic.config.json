@@ -1,5 +1,7 @@
 {
-  "name": "ionic-ovi-timer",
-  "integrations": {},
+  "name": "Ovi-Timer",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
