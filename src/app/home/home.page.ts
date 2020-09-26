@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { IonRouterOutlet, Platform } from '@ionic/angular';
+import { Plugins } from '@capacitor/core';
+const { App } = Plugins;
 
 import { timer } from 'rxjs';
 
@@ -16,7 +19,20 @@ export class HomePage {
   progressbar_value: number;
   timer_subscription: any;
 
-  constructor() {}
+  constructor(
+    private platform: Platform,
+    private routerOutlet: IonRouterOutlet,
+  ) {
+    this.platform.backButton.subscribeWithPriority(-1, () => {
+      if (!this.routerOutlet.canGoBack()) {
+        console.log('exiting...');
+        App.exitApp();
+      }
+      else {
+        console.log('cannot exit');
+      }
+    });
+  }
 
   ionViewDidEnter() {
     console.log('ionViewDidEnter...');
