@@ -28,5 +28,6 @@ ionic cap add android
 cd android/app/src/main/assets/ && ln -s ./public/ www && cd -
 ionic cap copy
 sudo snap install android-studio --classic
+cordova-res android --skip-config --copy --type icon
 ionic cap open android
 ```

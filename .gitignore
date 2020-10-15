@@ -31,3 +31,4 @@ npm-debug.log*
 /www
 /env
 /android
+/resources/android/icon/drawable-*-icon.png
